@@ -1,4 +1,23 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
-echo "-----> Nothing to do."
+build_dir=$1
+cache_dir=$2
+compile_buildpack_dir=$(cd $(dirname $0); cd ..; pwd)
+compile_buildpack_bin=$compile_buildpack_dir/bin
+echo "build_dir : ${build_dir}"
+echo "cache_dir : ${cache_dir}"
+echo "compile_buildpack_dir : ${compile_buildpack_dir}"
+echo "compile_buildpack_bin : ${compile_buildpack_bin}"
+
+cd ${compile_buildpack_dir}
+wget https://str.cloudn-service.com/buildpacks-cdn/java/jre-7u79-linux-x64.gz
+tar -zxvf jre-7u79-linux-x64.gz
+mv jre1.7.0_79 jre
+
+cd ${build_dir}
+
+cp $compile_buildpack_bin/server.sh .
+cp $compile_buildpack_bin/http.pl .
+cp $compile_buildpack_bin/http2.pl .
+cp -r ${compile_buildpack_dir}/jre .

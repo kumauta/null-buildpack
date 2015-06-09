@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo "--- {}"
+echo -e "---\ndefault_process_types:\n  web: sh server.sh"
