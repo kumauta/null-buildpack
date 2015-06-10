@@ -4,7 +4,7 @@ echo "Hosting dea : `curl -s http://ip.kumauta.com`"
 echo "Listen port : ${PORT}"
 echo "Current dir : `pwd`"
 echo "-------------------------------------------------"
-export JAVA_HOME=/home/vcap/app/jre/bin
+export JAVA_HOME=/home/vcap/app/jre
 export PATH=/home/vcap/app/jre/bin:${PATH}
 java -version
 
