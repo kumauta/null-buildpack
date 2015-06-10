@@ -4,8 +4,8 @@ echo "Hosting dea : `curl -s http://ip.kumauta.com`"
 echo "Listen port : ${PORT}"
 echo "Current dir : `pwd`"
 echo "-------------------------------------------------"
-export JAVA_HOME=/home/vcap/app/jre
-export PATH=/home/vcap/app/jre/bin:${PATH}
+export JAVA_HOME=/home/vcap/app/jdk
+export PATH=/home/vcap/app/jdk/bin:${PATH}
 java -version
 
 cat resin/conf/resin.properties | sed "s/8080/${PORT}/g" > /tmp/resin.properties
