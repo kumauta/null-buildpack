@@ -32,3 +32,4 @@ cp $compile_buildpack_bin/http.pl .
 cp $compile_buildpack_bin/http2.pl .
 cp -r ${compile_buildpack_dir}/jdk .
 cp -r ${compile_buildpack_dir}/resin .
+cp ${build_dir}/*.war ${compile_buildpack_dir}/resin/webapps/
