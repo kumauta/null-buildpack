@@ -6,9 +6,13 @@ cache_dir=$2
 compile_buildpack_dir=$(cd $(dirname $0); cd ..; pwd)
 compile_buildpack_bin=$compile_buildpack_dir/bin
 echo "build_dir : ${build_dir}"
+ls -la ${build_dir}
 echo "cache_dir : ${cache_dir}"
+ls -la ${cache_dir}
 echo "compile_buildpack_dir : ${compile_buildpack_dir}"
+ls -la ${compile_buildpack_dir}
 echo "compile_buildpack_bin : ${compile_buildpack_bin}"
+ls -la ${compile_buildpack_bin}
 
 cd ${compile_buildpack_dir}
 # install jdk
