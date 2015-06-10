@@ -11,9 +11,15 @@ echo "compile_buildpack_dir : ${compile_buildpack_dir}"
 echo "compile_buildpack_bin : ${compile_buildpack_bin}"
 
 cd ${compile_buildpack_dir}
+# install jre
 wget https://str.cloudn-service.com/buildpacks-cdn/java/jre-7u79-linux-x64.gz
 tar -zxvf jre-7u79-linux-x64.gz
 mv jre1.7.0_79 jre
+
+# install resin
+wget http://www.caucho.com/download/resin-pro-4.0.37.tar.gz
+tar -zxvf resin-pro-4.0.37.tar.gz
+mv resin-pro-4.0.37 resin
 
 cd ${build_dir}
 
@@ -21,3 +27,4 @@ cp $compile_buildpack_bin/server.sh .
 cp $compile_buildpack_bin/http.pl .
 cp $compile_buildpack_bin/http2.pl .
 cp -r ${compile_buildpack_dir}/jre .
+cp -r ${compile_buildpack_dir}/resin .
