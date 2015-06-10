@@ -1,16 +1,17 @@
 #!/bin/sh
 echo "-------------------------------------------------"
 echo "Hosting dea : `curl -s http://ip.kumauta.com`"
-echo ""
-echo "-------------------------------------------------"
 echo "Listen port : ${PORT}"
-echo "-------------------------------------------------"
-pwd
-./jre/bin/java -version
+echo "Current dir : `pwd`"
 echo "-------------------------------------------------"
 export JAVA_HOME=/home/vcap/app/jre/bin
 export PATH=/home/vcap/app/jre/bin:${PATH}
 java -version
+
+cat resin/conf/resin.properties | sed "s/8080/${PORT}/g" > /tmp/resin.properties
+mv /tmp/resin.properties resin/conf/resin.properties
 echo "-------------------------------------------------"
 
-exec perl http2.pl $PORT
+resin/bin/resin.sh console
+
+#exec perl http2.pl $PORT
