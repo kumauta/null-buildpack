@@ -27,7 +27,7 @@ mv resin-pro-4.0.37 resin
 
 # build native lib
 cd resin
-export JAVA_HOME=/home/vcap/app/jdk
+export JAVA_HOME=../jdk
 ./configure --prefix=`pwd` -enable-64bit-plugin -enable-64bit
 make
 make install
