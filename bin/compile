@@ -32,9 +32,9 @@ pwd
 ls -la ../
 ls -la ../jdk
 ls -la ../jdk/include
-ls- la ../jdk/include/linux
+ls -la ../jdk/include/linux
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-export JAVA_HOME=../jdk
+export JAVA_HOME=${compile_buildpack_dir}/jdk
 ./configure --prefix=`pwd` -enable-64bit-plugin -enable-64bit
 make
 make install
