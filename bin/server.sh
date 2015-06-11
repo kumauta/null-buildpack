@@ -12,6 +12,8 @@ cat resin/conf/resin.properties | sed "s/8080/${PORT}/g" > /tmp/resin.properties
 mv /tmp/resin.properties resin/conf/resin.properties
 echo "-------------------------------------------------"
 
-resin/bin/resin.sh console
-
-#exec perl http2.pl $PORT
+cd resin
+./configure --prefix=`pwd`
+make
+make install
+./bin/resin.sh console
