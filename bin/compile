@@ -27,6 +27,13 @@ mv resin-pro-4.0.37 resin
 
 # build native lib
 cd resin
+echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+pwd
+ls -la ../
+ls -la ../jdk
+ls -la ../jdk/include
+ls- la ../jdk/include/linux
+echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 export JAVA_HOME=../jdk
 ./configure --prefix=`pwd` -enable-64bit-plugin -enable-64bit
 make
