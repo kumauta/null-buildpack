@@ -24,7 +24,10 @@ mv jdk1.7.0_79 jdk
 wget http://www.caucho.com/download/resin-pro-4.0.37.tar.gz
 tar -zxvf resin-pro-4.0.37.tar.gz
 mv resin-pro-4.0.37 resin
+
+# build native lib
 cd resin
+export JAVA_HOME=/home/vcap/app/jdk
 ./configure --prefix=`pwd` -enable-64bit-plugin -enable-64bit
 make
 make install
